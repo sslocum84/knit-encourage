@@ -21,8 +21,8 @@
         }
         .encouragement {
             font-style: italic;
-            font-size: 1.2em; /* Increased font size */
-            background-color: #ffebcd; /* Light background color */
+            font-size: 1.2em;
+            background-color: #ffebcd;
             padding: 10px;
             border-radius: 5px;
             margin: 20px 0;
@@ -63,9 +63,15 @@
             "Yay! A learning experience!"
         ];
 
+        let lastMessageIndex = -1;
+
         function getEncouragement() {
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById("message").innerText = randomMessage;
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * messages.length);
+            } while (newIndex === lastMessageIndex);
+            lastMessageIndex = newIndex;
+            document.getElementById("message").innerText = messages[newIndex];
         }
     </script>
 </body>

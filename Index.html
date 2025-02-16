@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash-GPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f5f5dc;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .encouragement {
+            font-style: italic;
+            font-size: 1.2em; /* Increased font size */
+            background-color: #ffebcd; /* Light background color */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            min-height: 30px;
+        }
+        button {
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5a2e0e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Made a mistake in your knitting?</h2>
+        <p>Click below for some encouragement from our own Ash-GPT.</p>
+        <p class="encouragement" id="message"></p>
+        <button onclick="getEncouragement()">Encourage me</button>
+    </div>
+
+    <script>
+        const messages = [
+            "That’s ok. We can fix it.",
+            "Even knitters with many years experience make that mistake.",
+            "That’s not a mistake. It’s an advanced stitch!",
+            "Breathe. Remember we are doing this for relaxation.",
+            "Read. Rip. Reknit.",
+            "Somehow it works.",
+            "Just remember, crochet is worse.",
+            "Maybe it’s the pattern?",
+            "Yay! A learning experience!"
+        ];
+
+        function getEncouragement() {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").innerText = randomMessage;
+        }
+    </script>
+</body>
+</html>
